@@ -29,7 +29,7 @@ RUN yum -y install tar gzip zlib freetype-devel \
 COPY requirements.txt ./
 
 # Install the python requirements from requirements.txt
-RUN python3.8 -m pip install -r requirements.txt
+RUN python3.8 -m pip install -r requirements.txt --no-cache-dir
 # Replace Pillow with Pillow-SIMD to take advantage of AVX2
 RUN pip uninstall -y pillow && CC="cc -mavx2" pip install -U --force-reinstall pillow-simd
 
