@@ -38,7 +38,7 @@ COPY app.py ./
 
 # Download ResNet50 and store it in a directory
 RUN mkdir model
-RUN curl -L https://tfhub.dev/google/imagenet/resnet_v2_152/classification/5?tf-hub-format=compressed -o ./model/resnet.tar.gz
+RUN curl -L https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/4?tf-hub-format=compressed -o ./model/resnet.tar.gz
 RUN tar -xf model/resnet.tar.gz -C model/
 RUN rm -r model/resnet.tar.gz
 
